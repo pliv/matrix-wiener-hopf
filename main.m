@@ -65,16 +65,21 @@ for j=1:N_cases
         benchmark(phi(j), gamma, n_iter, far_point(j), END(j), struct(j).X);
     disp(['***************** Case ',num2str(j),' done ***************'])
     TIME(j) = time - cputime;
+    
 end
 
 params.time=TIME;
 
-% U_minus.analytic.func = @(x) 1./(x-2i);
-% V_minus.analytic.func = @(x) 1./(x-3i);
-% U_plus.analytic.func = @(x) 1./(x+2i);
-% V_plus.analytic.func = @(x) 1./(x+3i);
+% Create folder name string
+folderName = sprintf('results/gamma_%g', gamma);
 
+% Check if the folder exists, create if not
+if ~exist(folderName, 'dir')
+    mkdir(folderName);
+end
 
-save('results.mat','params','struct');
+% Save the file in the specified folder
+save(fullfile(folderName, 'results.mat'), 'params', 'struct');
+
 
 
