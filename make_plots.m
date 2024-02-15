@@ -5,7 +5,7 @@ clc;
 %% create plots for a given gamma
 % note that before creating plots for this gamma, the results must be
 % stored in results/gamma_{value_of_gamma} 
-gamma = 1;
+gamma = 0.5;
 folderName = sprintf('results/gamma_%g', gamma); % This creates 'results/gamma_1' if gamma==1
 fileName = 'results.mat';
 filePath = fullfile(folderName, fileName);

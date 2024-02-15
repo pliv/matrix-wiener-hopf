@@ -7,7 +7,7 @@ N_cases = 3;
 
 n_iter = 15;
 
-gamma = 1;
+gamma = 0.5;
 
 phi = [0.01, 0.1, 1];
 far_point = [230, 180, 180];
